@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Friends4ever</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+   <body class="bg-warning text-center text-white">
+    <header>
+      <div class="badge badge-danger">
+      <h3>
+       <%= "Signed in as #{current_user.name}" if signed_in? %>
+       </h3>
+      </div>
+      <div>
+      <%= link_to "My Page", user_path(current_user.id),
+      class: "btn btn-primary my-2 text-white" if signed_in? %>
+      <%= link_to 'Sign In', sessions_new_path,
+      class: "btn btn-primary my-2 text-white" unless signed_in? %>
+      <%= link_to 'Sign Out', sessions_destroy_path,
+      class: "btn btn-primary my-2 text-white" if signed_in? %>
+      <%= link_to 'All Users', users_path,
+      class: "btn btn-primary my-2 text-white" if signed_in? %>
+      </div>
+    </header>
+    <div class="m-auto border border-danger">
+    <%= yield %>
+    </div>
+  </body>
+</html>
