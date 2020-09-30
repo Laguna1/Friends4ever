@@ -1,4 +1,7 @@
 # README
+the original code is in https://github.com/kubilaycaglayan/the-simplest-friendship-model-on-rails
+
+Respect @kubilaycaglayan
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
